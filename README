@@ -1,3 +1,9 @@
 nutchManager
 
 This is a Web-GUI manager for the nutch crawler, written in Java with Vaadin.
+
+How to start the App:
+Use a servlet container (e.g. jetty) to run the nutchManager-0.0.1-alpha-war.war.
+
+CAUTION:
+You need JDK 1.6 in order to successfuly run nutchManager!
