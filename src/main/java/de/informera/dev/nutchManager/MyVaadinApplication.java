@@ -19,9 +19,9 @@ import java.io.File;
 
 import com.vaadin.Application;
 import com.vaadin.terminal.ClassResource;
+import com.vaadin.terminal.ThemeResource;
 import com.vaadin.ui.Embedded;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.MenuBar.MenuItem;
 import com.vaadin.ui.Window;
@@ -50,13 +50,12 @@ public class MyVaadinApplication extends Application
 		
 		window = new Window("nutchManager");
 		setMainWindow(window);
-		this.setTheme("reindeer");
-		window.setStyleName("Reindeer.LAYOUT_BLUE");
+		this.setTheme("nutchManager");
 
 		final HorizontalLayout technologies = new HorizontalLayout();
 		technologies.setSpacing(true);
-		technologies.addComponent( new Embedded( "", new ClassResource("../../../../images/nutch_logo_tm.gif", this) ) );
-		technologies.addComponent( new Embedded( "", new ClassResource("../../../../images/vaadin.png", this) ) );
+		technologies.addComponent( new Embedded( "", new ThemeResource("images/nutch_logo_tm.gif") ) );
+		technologies.addComponent( new Embedded( "", new ThemeResource("images/vaadin.png") ) );
 		
 		final MenuBar mainMenu = new MenuBar();
 

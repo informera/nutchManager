@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.vaadin.terminal.ClassResource;
+import com.vaadin.terminal.ThemeResource;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.GridLayout;
@@ -18,8 +20,9 @@ import com.vaadin.ui.Button.ClickEvent;
 public class InstanceSelectionView extends GridLayout {
 
 	private List<String> instances = new ArrayList<String>();
-
+	
 	public InstanceSelectionView() {
+		
 		// Load configuration for instances
 		File settings_folder = new File( System.getProperty("user.home") + "/.nutchManager/instances/" );
 		
@@ -43,7 +46,8 @@ public class InstanceSelectionView extends GridLayout {
 		for (final String name : instances) {
 			final int frow = row;
 			Button instButton = new Button(name);
-			Button instDelButton = new Button("X");
+			Button instDelButton = new Button();
+			instDelButton.setIcon( new ThemeResource( "images/fire-icon.png" ) );
 			final GridLayout that = this;
 			
 			instButton.addListener( new ClickListener() {
