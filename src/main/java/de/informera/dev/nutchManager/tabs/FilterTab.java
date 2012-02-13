@@ -17,11 +17,12 @@ import de.informera.dev.nutchManager.fileOperations.SecureFile;
 @SuppressWarnings("serial")
 public class FilterTab extends VerticalLayout {
 	public FilterTab(String path) {
+		this.setHeight("100%");
 		final String finalPath = path;
 		final TextArea urlFilterEditor = new TextArea();
 		this.addComponent( urlFilterEditor );
 		urlFilterEditor.setSizeFull();
-		urlFilterEditor.setHeight("420px");
+		this.setExpandRatio(urlFilterEditor, 1.0f);
 		
 		try {
 			String content = FileUtils.readFileToString( new File(path) );

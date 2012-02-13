@@ -18,11 +18,12 @@ import de.informera.dev.nutchManager.fileOperations.SecureFile;
 public class NutchSiteXmlTab extends VerticalLayout {
 
 	public NutchSiteXmlTab(String path) {
+		this.setHeight("100%");
 		final String finalPath = path;
 		final TextArea nutchSiteEditor = new TextArea();
 		this.addComponent( nutchSiteEditor );
 		nutchSiteEditor.setSizeFull();
-		nutchSiteEditor.setHeight("420px");
+		this.setExpandRatio(nutchSiteEditor, 1.0f);
 		
 		try {
 			String content = FileUtils.readFileToString( new File(path) );

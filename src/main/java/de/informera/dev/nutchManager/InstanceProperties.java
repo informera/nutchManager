@@ -29,8 +29,6 @@ public class InstanceProperties extends Window {
 		String name = "";
 		String nutchHome = "";
 		String seedsPath = "";
-		String urlFilterPath = "";
-		String regExNormalizerPath = "";
 		
 		//Resolving paths from cfg
 		try {
@@ -66,6 +64,7 @@ public class InstanceProperties extends Window {
 		tabView.addTab(normalizerTab);
 		tabView.getTab(normalizerTab).setCaption("regEx normalizer");
 		
-		this.addComponent(tabView);
+		this.setContent(tabView);
+		this.getContent().setSizeFull();
 	}
 }

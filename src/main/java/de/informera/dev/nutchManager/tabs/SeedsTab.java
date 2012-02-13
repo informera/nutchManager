@@ -17,11 +17,12 @@ import de.informera.dev.nutchManager.fileOperations.SecureFile;
 @SuppressWarnings("serial")
 public class SeedsTab extends VerticalLayout {
 	public SeedsTab(String path) {
+		this.setHeight("100%");
 		final String finalPath = path;
 		final TextArea seedsEditor = new TextArea();
 		this.addComponent( seedsEditor );
 		seedsEditor.setSizeFull();
-		seedsEditor.setHeight("420px");
+		this.setExpandRatio(seedsEditor, 1.0f);
 		
 		try {
 			String content = FileUtils.readFileToString( new File(path) );

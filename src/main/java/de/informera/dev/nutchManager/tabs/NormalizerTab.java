@@ -17,11 +17,12 @@ import de.informera.dev.nutchManager.fileOperations.SecureFile;
 @SuppressWarnings("serial")
 public class NormalizerTab extends VerticalLayout {
 	public NormalizerTab(String path) {
+		this.setHeight("100%");
 		final String finalPath = path;
 		final TextArea regExFilterEditor = new TextArea();
 		this.addComponent( regExFilterEditor );
+		this.setExpandRatio(regExFilterEditor, 1.0f);
 		regExFilterEditor.setSizeFull();
-		regExFilterEditor.setHeight("420px");
 		
 		try {
 			String content = FileUtils.readFileToString( new File(path) );
