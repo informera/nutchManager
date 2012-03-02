@@ -27,6 +27,8 @@ import com.vaadin.ui.MenuBar.MenuItem;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Window.Notification;
 
+import de.informera.dev.nutchManager.fileOperations.UrlFilterTest;
+import de.informera.dev.nutchManager.helpers.UrlCheckerWindow;
 import de.informera.dev.nutchManager.sysGui.AddInstanceDialog;
 
 /**
