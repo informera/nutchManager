@@ -9,6 +9,7 @@ import java.io.IOException;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Button.ClickEvent;
@@ -47,7 +48,10 @@ public class UrlCheckerWindow extends Window {
 		
 		
 		final TextField url = new TextField();
+		url.setWidth("400px");
 		final Window that = this;
+		final Label result = new Label();
+		result.setContentMode(Label.CONTENT_XHTML);
 		
 		url.setInputPrompt("URL");
 		
@@ -60,9 +64,9 @@ public class UrlCheckerWindow extends Window {
 				
 				UrlFilterTest bla = new UrlFilterTest( new File(fnutchHome + "/conf/regex-urlfilter.txt") );
 				if( bla.test( url.getValue().toString() ) != null ){
-					that.getApplication().getMainWindow().showNotification("URL passed through the filter");
+					result.setValue("<span style='color:#0a0;'>URL passed</span>");
 				}else{
-					that.getApplication().getMainWindow().showNotification("URL was filtered");
+					result.setValue("<span style='color:#a00;'>URL filtered</span>");
 				}
 				
 			}
@@ -70,7 +74,7 @@ public class UrlCheckerWindow extends Window {
 		
 		container.addComponent(url);
 		container.addComponent(check);
-		this.setContent(container);
-		container.setSizeFull();
+		this.addComponent(container);
+		this.addComponent(result);
 	}
 }
