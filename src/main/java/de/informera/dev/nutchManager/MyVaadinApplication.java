@@ -18,7 +18,6 @@ package de.informera.dev.nutchManager;
 import java.io.File;
 
 import com.vaadin.Application;
-import com.vaadin.terminal.ClassResource;
 import com.vaadin.terminal.ThemeResource;
 import com.vaadin.ui.Embedded;
 import com.vaadin.ui.HorizontalLayout;
@@ -27,8 +26,6 @@ import com.vaadin.ui.MenuBar.MenuItem;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Window.Notification;
 
-import de.informera.dev.nutchManager.fileOperations.UrlFilterTest;
-import de.informera.dev.nutchManager.helpers.UrlCheckerWindow;
 import de.informera.dev.nutchManager.sysGui.AddInstanceDialog;
 
 /**
